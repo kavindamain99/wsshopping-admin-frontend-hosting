@@ -196,8 +196,8 @@ const UpdateProduct = ({match}) => {
                     <div className="form-group">
                         <label className="text-muted">Unit</label>
                         
-                        <select onChange={handleChange('item_weight')} className="form-control" value={item_shipping} >
-                        <option value=".00">Plese select</option>
+                        <select onChange={handleChange('item_weight')} className="form-control" value={item_weight} >
+                        <option value=".00">Please select</option>
                             <option value=".00">.00</option>
                             <option value="Kg">Kilogram</option>
                             <option value="g">gram</option>
