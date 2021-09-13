@@ -9,7 +9,7 @@ import {getCategories} from "../Auth/admin-item/getCategory";
 //empty image
 import emptyImage from '../Images/blank-img.jpg';
 
-
+import Swal from 'sweetalert2';
 
 const InsertProduct = () => {
 
@@ -114,7 +114,11 @@ useEffect(() => {
 
                 
                 });
-
+                Swal.fire(
+                    'Added',
+                    `New Item inserted Successfully`,
+                    'success'
+                  )
             }
 
 
@@ -215,7 +219,7 @@ useEffect(() => {
                         <label className="text-muted">Unit</label>
                         
                         <select onChange={handleChange('item_weight')} className="form-control" value={item_weight} >
-                        <option value=".00">Please select</option>
+                            <option value=".00">Please select</option>
                             <option value=".00">.00</option>
                             <option value="Kg">Kilogram</option>
                             <option value="g">gram</option>

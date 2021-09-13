@@ -75,12 +75,12 @@ const ManageAdvertisements = () => {
                                     <ShowImage item={ advertisement } url="advertisement"/>
                                     <p>{ advertisement.adCode }</p>
                                     <Link to={ `/admin/advertisement/${ advertisement._id }` }>
-                                        <button className="btn btn-outline-primary mt-2 mb-2 ml-2">View</button>
+                                        <button className="btn btn-sm btn-outline-primary mt-2 mb-2 ml-2">View</button>
                                     </Link>
                                     <Link to={ `/admin/updateAd/${ advertisement._id }` }>
-                                        <button className="btn btn-outline-warning mt-2 mb-2 ml-2">Update</button>
+                                        <button className="btn btn-sm btn-outline-warning mt-2 mb-2 ml-2">Update</button>
                                     </Link>
-                                    <button className="btn btn-outline-danger mt-2 mb-2 ml-2" onClick={ () => remove(advertisement._id) }>Delete</button>
+                                    <button className="btn btn-sm btn-outline-danger mt-2 mb-2 ml-2" onClick={ () => remove(advertisement._id) }>Delete</button>
                                 </div>
                             </div>
                         </div>)) 

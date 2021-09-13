@@ -5,6 +5,10 @@ import Sidebar from '../core/sidebar';
 import { Link } from 'react-router-dom';
 import {insertCategory} from "../Auth/admin-item/insertCategory";
 import {getCategories,deleteCategory} from "../Auth/admin-item/getCategory";
+
+
+import Swal from 'sweetalert2';
+
 const InsertCategory = () => {
 
 
@@ -30,17 +34,29 @@ useEffect(() => {
     init();
 }, []);
 
+
 //deleteCategory
 const destroy = categoryId=> {
-    var x = window.confirm("Are you sure you want to delete this post ? ");
-
-
-    if (x === true) {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
         deleteCategory(categoryId).then(data => {
             if (data.error) {
                 console.log(data.error);
             } else {
-
+                Swal.fire(
+                    'Deleted',
+                    'Category Deleted Successfully',
+                    'success'
+                  )
                init();
             }
         });
@@ -48,8 +64,9 @@ const destroy = categoryId=> {
     } else {
         init();
     }
-
+      })
 };
+
 
 useEffect(() => {
     getCategories();

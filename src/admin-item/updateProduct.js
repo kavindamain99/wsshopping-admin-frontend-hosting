@@ -10,6 +10,9 @@ import { Redirect } from 'react-router-dom';
 
 import ShowImage from '../Auth/admin-item/ShowImageUpdate';
 
+import Swal from 'sweetalert2';
+
+
 const UpdateProduct = ({match}) => {
 
     
@@ -109,6 +112,11 @@ const UpdateProduct = ({match}) => {
 
                 
                 });
+                Swal.fire(
+                    'Updated',
+                    'Product Updated Successfully',
+                    'success'
+                  )
 
             }
 
