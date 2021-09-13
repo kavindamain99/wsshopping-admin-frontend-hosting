@@ -113,6 +113,11 @@ useEffect(() => {
 
 
                 });
+                Swal.fire(
+                    'Added',
+                    `New Category inserted Successfully`,
+                    'success'
+                  )
                 init();
             }
         });
@@ -179,7 +184,7 @@ return (
 
 <Sidebar>
     {showError()}
-    {showSuccess()}
+   
     {categoryForm()}
     
 </Sidebar>
