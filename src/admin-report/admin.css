@@ -1,0 +1,12 @@
+.search-btn{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    vertical-align: bottom !important;
+    height: auto;
+}
+
+.search-box{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: inline-block !important;
+}
